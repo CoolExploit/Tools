@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Tools Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #00ffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      animation: fadeInDown 1.5s ease;
+      letter-spacing: 2px;
+    }
+
+    .tool-container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .tool-container:hover {
+      transform: scale(1.1);
+    }
+
+    .tool-container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #00ffff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 15px #00ffff; }
+      to { box-shadow: 0 0 40px #00ffff; }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #8fffff;
+      opacity: 0.7;
+      animation: fadeInUp 2s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Tech Tools Hub ⚙️</h1>
+
+  <!-- Main Tool Image -->
+  <div class="tool-container" onclick="goToTool()">
+    <img src="tool1.png" alt="Tool 1">
+  </div>
+
+  <div class="footer">Click the tool to explore →</div>
+
+  <script>
+    function goToTool() {
+      window.location.href = "/tool1"; // change to your tool folder name
+    }
+  </script>
+</body>
+</html>
